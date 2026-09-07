@@ -4,16 +4,318 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Warkop Geng Kapak Abieee</title>
+    <title>Warkop Geng Kapak Abie</title>
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5eee5;
+            color: #2b1a10;
+        }
+
+        /* NAVBAR */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 8%;
+
+            background: #1d100a;
+            box-shadow: 0 3px 15px rgba(0,0,0,.3);
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #e49a4b;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e49a4b;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 620px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            padding: 30px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(30,15,8,.72),
+                    rgba(30,15,8,.72)
+                ),
+                url("https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero small {
+            color: #e5a25c;
+            letter-spacing: 4px;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            margin: 20px 0;
+        }
+
+        .hero h1 span {
+            color: #e49a4b;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 15px 32px;
+
+            background: #b96828;
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #8c481c;
+            transform: translateY(-3px);
+        }
+
+        /* MENU */
+        .menu {
+            padding: 80px 8%;
+        }
+
+        .judul {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .judul h2 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .judul p {
+            color: #77665a;
+        }
+
+        .kategori {
+            font-size: 28px;
+            margin: 45px 0 20px;
+        }
+
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        /* CARD */
+        .card {
+            overflow: hidden;
+
+            background: white;
+
+            border-radius: 15px;
+
+            box-shadow: 0 6px 20px rgba(0,0,0,.12);
+
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 190px;
+
+            object-fit: cover;
+        }
+
+        .isi {
+            padding: 18px;
+        }
+
+        .isi h3 {
+            margin-bottom: 8px;
+        }
+
+        .isi p {
+            color: #75665c;
+            font-size: 14px;
+            line-height: 1.5;
+            min-height: 55px;
+        }
+
+        .harga {
+            display: block;
+            margin-top: 12px;
+
+            color: #ad5b1e;
+
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* TENTANG */
+        .tentang {
+            padding: 90px 15%;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(32,17,9,.78),
+                    rgba(32,17,9,.78)
+                ),
+                url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1600&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .tentang h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .tentang p {
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* KONTAK */
+        .kontak {
+            text-align: center;
+            padding: 70px 10%;
+        }
+
+        .kontak h2 {
+            font-size: 35px;
+            margin-bottom: 25px;
+        }
+
+        .kontak p {
+            margin: 12px;
+            color: #66564a;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+
+            background: #1d100a;
+            color: white;
+        }
+
+        footer p {
+            color: #cdb9a5;
+            margin-top: 10px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+
+            .menu-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 13px;
+            }
+
+            .hero {
+                min-height: 520px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .menu-container {
+                grid-template-columns: 1fr;
+            }
+
+            .tentang {
+                padding: 60px 10%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- NAVBAR -->
     <header>
-        <div class="logo">🪓 GENG KAPAK ABIEEE</div>
+
+        <div class="logo">
+            🪓 WARKOP <span>GENG KAPAK</span>
+        </div>
 
         <nav>
             <a href="#home">Home</a>
@@ -21,27 +323,28 @@
             <a href="#tentang">Tentang</a>
             <a href="#kontak">Kontak</a>
         </nav>
+
     </header>
 
 
     <!-- HERO -->
     <section class="hero" id="home">
 
-        <div class="hero-text">
+        <div>
 
-            <p class="welcome">SELAMAT DATANG DI</p>
+            <small>SELAMAT DATANG DI</small>
 
-            <h1>WARKOP<br>
-                <span>GENG KAPAK</span>
+            <h1>
+                WARKOP<br>
+                <span>GENG KAPAK ABIE</span>
             </h1>
 
             <p>
-                Tempat ngopi, makan, ngobrol,
-                dan nongkrong bareng teman.
+                ☕ Ngopi • 🍜 Makan • 😎 Nongkrong • 🔥 Santai
             </p>
 
             <a href="#menu" class="btn">
-                Lihat Menu ☕
+                LIHAT MENU ☕
             </a>
 
         </div>
@@ -52,80 +355,62 @@
     <!-- MENU -->
     <section class="menu" id="menu">
 
-        <p class="judul-kecil">MENU FAVORIT</p>
+        <div class="judul">
 
-        <h2>Menu Warkop</h2>
+            <h2>☕ MENU WARKOP</h2>
 
-        <p class="deskripsi">
-            Nikmati berbagai kopi, minuman, makanan,
-            dan camilan dengan harga ramah kantong.
-        </p>
+            <p>
+                Pilihan menu favorit untuk menemani nongkrongmu.
+            </p>
+
+        </div>
 
 
-        <h3 class="kategori">☕ KOPI</h3>
+        <!-- KOPI -->
+        <h3 class="kategori">☕ Kopi</h3>
 
         <div class="menu-container">
 
             <div class="card">
-                <img src="images/kopi-hitam.jpg">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=700&q=80">
 
-                <div class="card-content">
+                <div class="isi">
                     <h3>Kopi Hitam</h3>
-
-                    <p>
-                        Kopi hitam khas warkop dengan
-                        aroma kuat dan rasa nikmat.
-                    </p>
-
-                    <span>Rp5.000</span>
+                    <p>Kopi hitam khas warkop dengan rasa kuat.</p>
+                    <span class="harga">Rp5.000</span>
                 </div>
             </div>
 
 
             <div class="card">
-                <img src="images/kopi-susu.jpg">
+                <img src="https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=700&q=80">
 
-                <div class="card-content">
+                <div class="isi">
                     <h3>Kopi Susu</h3>
-
-                    <p>
-                        Kopi dengan campuran susu
-                        yang lembut dan creamy.
-                    </p>
-
-                    <span>Rp7.000</span>
+                    <p>Perpaduan kopi dan susu yang lembut.</p>
+                    <span class="harga">Rp7.000</span>
                 </div>
             </div>
 
 
             <div class="card">
-                <img src="images/es-kopi.jpg">
+                <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=80">
 
-                <div class="card-content">
+                <div class="isi">
                     <h3>Es Kopi Susu</h3>
-
-                    <p>
-                        Kopi susu dingin yang cocok
-                        untuk menemani nongkrong.
-                    </p>
-
-                    <span>Rp8.000</span>
+                    <p>Kopi susu dingin untuk teman nongkrong.</p>
+                    <span class="harga">Rp8.000</span>
                 </div>
             </div>
 
 
             <div class="card">
-                <img src="images/cappuccino.jpg">
+                <img src="https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?auto=format&fit=crop&w=700&q=80">
 
-                <div class="card-content">
+                <div class="isi">
                     <h3>Cappuccino</h3>
-
-                    <p>
-                        Kopi dengan susu dan foam
-                        yang lembut.
-                    </p>
-
-                    <span>Rp10.000</span>
+                    <p>Kopi susu dengan foam yang lembut.</p>
+                    <span class="harga">Rp10.000</span>
                 </div>
             </div>
 
@@ -133,38 +418,50 @@
 
 
         <!-- MINUMAN -->
-        <h3 class="kategori">🥤 MINUMAN</h3>
+        <h3 class="kategori">🥤 Minuman</h3>
 
         <div class="menu-container">
 
             <div class="card">
-                <img src="images/es-teh.jpg">
+                <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=700&q=80">
 
-                <div class="card-content">
+                <div class="isi">
                     <h3>Es Teh</h3>
-
-                    <p>
-                        Es teh manis yang segar
-                        untuk menemani nongkrong.
-                    </p>
-
-                    <span>Rp4.000</span>
+                    <p>Es teh manis yang segar.</p>
+                    <span class="harga">Rp4.000</span>
                 </div>
             </div>
 
 
             <div class="card">
-                <img src="images/es-coklat.jpg">
+                <img src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?auto=format&fit=crop&w=700&q=80">
 
-                <div class="card-content">
+                <div class="isi">
                     <h3>Es Coklat</h3>
+                    <p>Minuman coklat dingin dan manis.</p>
+                    <span class="harga">Rp7.000</span>
+                </div>
+            </div>
 
-                    <p>
-                        Minuman coklat dingin
-                        dengan rasa manis.
-                    </p>
 
-                    <span>Rp7.000</span>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=700&q=80">
+
+                <div class="isi">
+                    <h3>Es Jeruk</h3>
+                    <p>Minuman jeruk yang segar.</p>
+                    <span class="harga">Rp6.000</span>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=700&q=80">
+
+                <div class="isi">
+                    <h3>Susu</h3>
+                    <p>Susu hangat dengan rasa lembut.</p>
+                    <span class="harga">Rp6.000</span>
                 </div>
             </div>
 
@@ -172,54 +469,50 @@
 
 
         <!-- MAKANAN -->
-        <h3 class="kategori">🍜 MAKANAN</h3>
+        <h3 class="kategori">🍜 Makanan</h3>
 
         <div class="menu-container">
 
             <div class="card">
-                <img src="images/indomie.jpg">
+                <img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=700&q=80">
 
-                <div class="card-content">
+                <div class="isi">
                     <h3>Indomie Goreng</h3>
-
-                    <p>
-                        Indomie goreng dengan
-                        bumbu khas warkop.
-                    </p>
-
-                    <span>Rp8.000</span>
+                    <p>Indomie goreng dengan bumbu khas warkop.</p>
+                    <span class="harga">Rp8.000</span>
                 </div>
             </div>
 
 
             <div class="card">
-                <img src="images/nasi-telur.jpg">
+                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80">
 
-                <div class="card-content">
-                    <h3>Nasi Telur</h3>
-
-                    <p>
-                        Nasi hangat dengan telur
-                        dan bumbu gurih.
-                    </p>
-
-                    <span>Rp10.000</span>
+                <div class="isi">
+                    <h3>Indomie + Telur</h3>
+                    <p>Indomie lengkap dengan tambahan telur.</p>
+                    <span class="harga">Rp12.000</span>
                 </div>
             </div>
 
 
             <div class="card">
-                <img src="images/roti-bakar.jpg">
+                <img src="https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&w=700&q=80">
 
-                <div class="card-content">
+                <div class="isi">
                     <h3>Roti Bakar</h3>
+                    <p>Roti bakar coklat dan keju.</p>
+                    <span class="harga">Rp8.000</span>
+                </div>
+            </div>
 
-                    <p>
-                        Roti bakar dengan pilihan
-                        coklat atau keju.
-                    </p>
 
-                    <span>Rp8.000</span>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80">
+
+                <div class="isi">
+                    <h3>Nasi Telur</h3>
+                    <p>Nasi hangat dengan telur dan bumbu gurih.</p>
+                    <span class="harga">Rp10.000</span>
                 </div>
             </div>
 
@@ -227,54 +520,50 @@
 
 
         <!-- CAMILAN -->
-        <h3 class="kategori">🍟 CAMILAN</h3>
+        <h3 class="kategori">🍟 Camilan</h3>
 
         <div class="menu-container">
 
             <div class="card">
-                <img src="images/pisang-goreng.jpg">
+                <img src="https://images.unsplash.com/photo-1623238913973-21e45cced554?auto=format&fit=crop&w=700&q=80">
 
-                <div class="card-content">
+                <div class="isi">
                     <h3>Pisang Goreng</h3>
-
-                    <p>
-                        Pisang goreng hangat
-                        dan renyah.
-                    </p>
-
-                    <span>Rp7.000</span>
+                    <p>Pisang goreng hangat dan renyah.</p>
+                    <span class="harga">Rp7.000</span>
                 </div>
             </div>
 
 
             <div class="card">
-                <img src="images/kentang.jpg">
+                <img src="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?auto=format&fit=crop&w=700&q=80">
 
-                <div class="card-content">
+                <div class="isi">
                     <h3>Kentang Goreng</h3>
-
-                    <p>
-                        Kentang goreng gurih
-                        untuk teman ngobrol.
-                    </p>
-
-                    <span>Rp10.000</span>
+                    <p>Kentang goreng gurih untuk teman ngobrol.</p>
+                    <span class="harga">Rp10.000</span>
                 </div>
             </div>
 
 
             <div class="card">
-                <img src="images/cireng.jpg">
+                <img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=700&q=80">
 
-                <div class="card-content">
+                <div class="isi">
                     <h3>Cireng</h3>
+                    <p>Cireng renyah dan gurih.</p>
+                    <span class="harga">Rp7.000</span>
+                </div>
+            </div>
 
-                    <p>
-                        Cireng renyah dan gurih
-                        cocok untuk camilan.
-                    </p>
 
-                    <span>Rp7.000</span>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?auto=format&fit=crop&w=700&q=80">
+
+                <div class="isi">
+                    <h3>Kacang Goreng</h3>
+                    <p>Camilan gurih untuk menemani kopi.</p>
+                    <span class="harga">Rp5.000</span>
                 </div>
             </div>
 
@@ -286,18 +575,15 @@
     <!-- TENTANG -->
     <section class="tentang" id="tentang">
 
-        <div>
-            <p class="judul-kecil">TENTANG KAMI</p>
+        <h2>🪓 Tentang Geng Kapak</h2>
 
-            <h2>Warkop Geng Kapak Abieee</h2>
-
-            <p>
-                Warkop Geng Kapak adalah tempat nongkrong
-                sederhana dengan suasana nyaman dan santai.
-                Cocok untuk ngopi, makan, ngobrol bersama
-                teman, atau sekadar menghabiskan waktu.
-            </p>
-        </div>
+        <p>
+            Warkop Geng Kapak Abie adalah tempat nongkrong
+            sederhana untuk menikmati kopi, makanan,
+            dan menghabiskan waktu bersama teman.
+            Harga bersahabat, suasana nyaman,
+            dan pastinya cocok untuk nongkrong.
+        </p>
 
     </section>
 
@@ -307,11 +593,11 @@
 
         <h2>📍 Kunjungi Kami</h2>
 
-        <p>📱 WhatsApp: 085143882102</p>
+        <p>📱 WhatsApp: 08XX-XXXX-XXXX</p>
 
-        <p>📍 Lokasi: Warkop Geng Kapak Abieee</p>
+        <p>📍 Lokasi: Warkop Geng Kapak Abie</p>
 
-        <p>⏰ Buka setiap hari: 16.00 - 02.00</p>
+        <p>⏰ Buka: 16.00 - 02.00</p>
 
     </section>
 
@@ -319,17 +605,19 @@
     <!-- FOOTER -->
     <footer>
 
-        <h3>🪓 WARKOP GENG KAPAK Abieee</h3>
+        <h3>🪓 WARKOP GENG KAPAK ABIE</h3>
 
         <p>
             Ngopi • Makan • Nongkrong • Santai
         </p>
 
+        <br>
+
         <small>
-            © 2026 Warkop Geng Kapak Abieee
+            © 2026 Warkop Geng Kapak Abie
         </small>
 
     </footer>
 
 </body>
-            </html>
+</html>
